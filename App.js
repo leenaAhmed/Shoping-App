@@ -1,22 +1,12 @@
-import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
-
-import WelcomeScreen from "./app/screens/Welcomescreen";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import AppText from "./app/componant/AppText";
-import AppButton from "./app/componant/AppButton";
-import Card from "./app/componant/Card";
-import ListDetailsScreen from "./app/screens/ListDetailsScreen";
+import React, { useState } from "react";
+import { Switch, StyleSheet } from "react-native";
+import AppPicker from "./app/components/AppPicker";
+import Screen from "./app/components/Screen";
+import AppInput from "./app/components/Form/AppInput";
+import ListingCategotyScreen from "./app/screens/ListingCategotyScreen";
 
 export default function App() {
-  return <ViewImageScreen />;
+  return <ListingCategotyScreen />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    paddingTop: 90,
-    backgroundColor: "#f8f4f4",
-  },
-  detailsContainer: {},
-});
+const styles = StyleSheet.create({});

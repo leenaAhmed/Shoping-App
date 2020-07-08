@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "shpoingApp",
-    "slug": "shpoingApp",
+    "name": "ShopingApp",
+    "slug": "ShopingApp",
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -13,16 +14,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "description": "marketplace for selling ",
-    "githubUrl": "https://github.com/leenaAhmed"
+    "description": "A marketplace for selling "
   }
 }
