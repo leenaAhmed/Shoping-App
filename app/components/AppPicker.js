@@ -15,16 +15,19 @@ import PickerIems from "./listing/PickerIems";
 
 export default function AppPicker({
   icon,
+  numOfColumns = 1,
+  width = "100%",
   items,
   placeholder,
   onSelectItem,
   selectedItem,
+  PickerItemComponant = PickerIems,
 }) {
   const [modelVisible, setmodelVisible] = useState(false);
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setmodelVisible(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
@@ -48,12 +51,20 @@ export default function AppPicker({
       </TouchableWithoutFeedback>
       <Modal visible={modelVisible} animationType="slide">
         <Screen>
-          <Button title="close" onPress={() => setmodelVisible(false)} />
+          <Button
+            backgroundColor={defaultStyle.colors.light}
+            color={defaultStyle.colors.danger}
+            title="close"
+            style={styles.buttonCategory}
+            onPress={() => setmodelVisible(false)}
+          />
           <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
+            numColumns={numOfColumns}
             renderItem={({ item }) => (
-              <PickerIems
+              <PickerItemComponant
+                item={item}
                 label={item.label}
                 onPress={() => {
                   setmodelVisible(false);
@@ -75,10 +86,13 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     padding: 15,
     marginVertical: 10,
-    width: "100%",
   },
   icon: {
     marginRight: 10,
+  },
+  placeholder: {
+    flex: 1,
+    color: defaultStyle.colors.medium,
   },
   text: {
     flex: 1,

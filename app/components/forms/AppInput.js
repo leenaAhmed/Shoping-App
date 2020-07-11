@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyle from "../../config/stylee";
-export default function AppInput({ icon, ...otherProps }) {
+export default function AppInput({ icon, width = "100%", ...otherProps }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width }]}>
       {icon && (
         <MaterialCommunityIcons
           name={icon}
@@ -13,7 +13,11 @@ export default function AppInput({ icon, ...otherProps }) {
           style={styles.icon}
         />
       )}
-      <TextInput style={defaultStyle.text} {...otherProps} />
+      <TextInput
+        placeholderTextColor={defaultStyle.colors.medium}
+        style={defaultStyle.text}
+        {...otherProps}
+      />
     </View>
   );
 }
@@ -25,7 +29,6 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     padding: 15,
     marginVertical: 10,
-    width: "100%",
   },
   icon: {
     marginRight: 10,

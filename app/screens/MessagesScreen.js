@@ -2,26 +2,26 @@ import React, { useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 
 import Screen from "../components/Screen";
-import ListItem from "../components/ListItem";
-import ListItemSeparator from "../components/ListItemSeparator";
-import ListItemDeleteAction from "../components/ListItemDeleteAction";
+import ListItem from "../components/listing/ListItem";
+import ListItemSeparator from "../components/listing/ListItemSeparator";
+import ListItemDeleteAction from "../components/listing/ListItemDeleteAction";
 
 const initialMessages = [
   {
     id: 1,
-    title: "linaa",
-    description: "Running application ",
+    title: "lina ",
+    description: "hi I'm interested in learning react.",
     image: require("../assets/lina.jpeg"),
   },
   {
     id: 2,
-    title: "linaa",
-    description: "Running application ",
+    title: "lina",
+    description: "I wanted to play jazz ",
     image: require("../assets/lina.jpeg"),
   },
   {
     id: 3,
-    title: "linaa",
+    title: "lina",
     description: "Running application ",
     image: require("../assets/lina.jpeg"),
   },
